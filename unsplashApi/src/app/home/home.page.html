@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Unsplash<strong>API</strong>  🤯
+    </ion-title>
+  </ion-toolbar>
+  <ion-toggle></ion-toggle>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="itemImage">
+  <ion-card *ngFor="let item of itemImage">
+    <ion-card-header>
+      <ion-card-subtitle>{{item.updated_at}}</ion-card-subtitle>
+      <ion-card-title>{{item.user.first_name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <img class="img" src="{{item.urls.regular}}" alt="" (mouseenter)="showLikes()" (mouseleave)="hideLikes()" (mousemove)="mousePointer()">
+      <ion-badge id="likeBubble" *ngIf="onHover" color="warning">{{item.likes}}</ion-badge>
+    </ion-card-content>
+
+  </ion-card>
+  
+</ion-content>
