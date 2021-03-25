@@ -1,0 +1,15 @@
+<ion-content [fullscreen]="true">
+<div class="home-container">
+  <div class="home-container__photo">
+    
+  </div>
+  <div class="home-container__name">
+
+  </div>
+  <div class="home-container__contact-methods-container">
+    <div class="method" *ngFor="let method of methods; trackBy:method.id">
+      {{method}}
+    </div>
+  </div>
+</div>
+</ion-content>
